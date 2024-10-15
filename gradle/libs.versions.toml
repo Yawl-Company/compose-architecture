@@ -1,0 +1,82 @@
+[versions]
+# build core
+agp = "8.5.2"
+java = "17"
+kotlin = "2.0.20"
+kotlinLanguageVersion = "1.9"
+
+# build configuration
+compileSdk = "34"
+targetSdk = "34"
+minSdk = "24"
+buildTools = "34.0.0"
+
+# testing and analysis
+junit = "4.13.2"
+junitVersion = "1.2.1"
+testRules = "1.6.1"
+testRunner = "1.6.2"
+espressoCore = "3.6.1"
+
+# compose
+activityCompose = "1.9.2"
+composeBom = "2024.09.03"
+androidxComposeCompiler = "1.5.12"
+androidxComposeNavigation = "2.8.2"
+
+# android-ktx
+coreKtx = "1.13.1"
+lifecycleRuntimeKtx = "2.8.6"
+
+# other
+kotlinCoroutines = "1.8.0"
+kotlinSerialization = "1.7.3"
+ksp = "2.0.20-1.0.25"
+
+[libraries]
+kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
+ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
+
+# android-ktx
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+
+# compose
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidx-compose-runtime = { group = "androidx.compose.runtime", name = "runtime" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+androidx-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-ui-tooling-base = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "androidxComposeNavigation" }
+
+# testing
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-test-rules = { group = "androidx.test", name = "rules", version.ref = "testRules" }
+androidx-test-runner = { group = "androidx.test", name = "runner", version.ref = "testRunner" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+
+# other
+kotlin-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinCoroutines" }
+kotlin-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinSerialization" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+kotlin-parcelable = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+
+convention-android-application = { id = "convention.kotlin-android-app", version = "unspecified" }
+convention-android-library = { id = "convention.kotlin-android-library", version = "unspecified" }
+convention-android-compose = { id = "convention.android-compose", version = "unspecified" }
+convention-android-unit-test = { id = "convention.unit", version = "unspecified" }
+convention-android-ui-test = { id = "convention.ui", version = "unspecified" }
+convention-kotlin-serialization = { id = "convention.serialization", version = "unspecified" }
+
